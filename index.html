@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+
+        <script type="text/javascript" src="js/prototype.js"></script>
+
+<script type="text/javascript">
+	function moveZ(div) {
+		var up = true;
+		var zIn = 100;
+		for(var k=0;k<4;k++)  {
+			$('div'+k).setStyle({
+  				zIndex: zIn, // notice how float is surrounded by single quotes
+			});
+			if (k == div) {
+				up = false;
+				zIn += 1;
+			}
+			
+			if (up) {
+				zIn += 2;
+			}
+			else {
+				zIn -= 2;
+			}
+		}
+	}
+</script>
+    </head>
+    <body>
+        <div id="div0" onMouseOver="moveZ(0);" style="background-color: #33FFFF; position: absolute; width: 300px; height: 300px; z-index: 1; top: 0px; left: 0px;"></div>
+        <div id="div1" onMouseOver="moveZ(1);" style="background-color: #3333FF; position: absolute; width: 300px; height: 300px; z-index: 2; top: 0px; left: 20px;"></div>
+		<div id="div2" onMouseOver="moveZ(2);" style="background-color: #333333; position: absolute; width: 300px; height: 300px; z-index: 3; top: 0px; left: 40px;"></div>
+		<div id="div3" onMouseOver="moveZ(3);" style="background-color: #3399FF; position: absolute; width: 300px; height: 300px; z-index: 4; top: 0px; left: 60px;"></div>
+    </body>
+</html>
